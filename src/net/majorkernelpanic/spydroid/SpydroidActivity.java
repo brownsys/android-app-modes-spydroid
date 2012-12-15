@@ -195,12 +195,12 @@ public class SpydroidActivity extends Activity implements
                 editor.putBoolean("stream_video", true);
                 editor.putInt("video_resX", 640);
                 editor.putInt("video_resY", 480);
-                editor.putString("video_framerate", "20"); // 20 fps
+                editor.putString("video_framerate", "15"); // 15 fps
                 editor.putString("video_bitrate", "500"); // 500 kbps
                 editor.putString("video_encoder", "1"); // H264
 
                 editor.putBoolean("stream_audio", true);
-                editor.putString("audio_encoder", "5"); // AAC
+                editor.putString("audio_encoder", "3"); // AMR-NB
 
                 editor.commit();
             } else if (modeName.equals(Modes.SD_STREAMING)) {
@@ -210,7 +210,7 @@ public class SpydroidActivity extends Activity implements
                 editor.putInt("video_resY", 240);
                 editor.putString("video_framerate", "10"); // 10 fps
                 editor.putString("video_bitrate", "300"); // 300 kbps
-                editor.putString("video_encoder", "2"); // H264
+                editor.putString("video_encoder", "2"); // H263
 
                 editor.putBoolean("stream_audio", false);
                 editor.commit();
@@ -218,6 +218,7 @@ public class SpydroidActivity extends Activity implements
                 Editor editor = settings.edit();
                 editor.putBoolean("stream_video", false);
                 editor.putBoolean("stream_audio", true);
+                editor.putString("audio_encoder", "3"); // AMR-NB
                 editor.commit();
             } else {
                 Toast.makeText(context, "Invalid mode", Toast.LENGTH_SHORT)
